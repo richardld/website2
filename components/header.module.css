@@ -1,0 +1,53 @@
+.overall {
+  display: flex;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin: 5px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-self: center;
+  align-items: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  text-align: center;
+}
+
+.header-horizontal {
+  display: flex;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+  margin-left: 15px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.header-content {
+  font-size: 18px;
+  text-align: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.concept {
+  display: flex;
+  align-items: center;
+}
+
+.arrows {
+  border-width: 0px;
+  background-color: inherit;
+}

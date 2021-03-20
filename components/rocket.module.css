@@ -1,0 +1,30 @@
+.misc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rocket {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cut {
+  width: 290px;
+  background-color: white;
+}
+
+.mmr {
+  width: 400px;
+  scrollbar-width: none;
+  pointer-events:none;
+  overflow: hidden;
+  scrollbar-color: white;
+}
+
+
+.mmr body {
+  scrollbar-width: none;
+  overflow: hidden;
+}
+

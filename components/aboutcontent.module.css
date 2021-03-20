@@ -1,0 +1,15 @@
+.top {
+  margin: 20px;
+}
+
+.courses {
+  display: flex;
+}
+
+.bottom {
+  display: flex;
+}
+
+.bottomelement {
+  margin-right: 50px;
+}
