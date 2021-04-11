@@ -6,6 +6,7 @@ import Header from '../components/header'
 import AppleHome from '../components/apple'
 import RandomHome from '../components/randomtext'
 import CatHome from '../components/cat'
+import ChatHome from '../components/chat'
 
 import firebase from "firebase"
 import styles from '../styles/Home.module.css'
@@ -72,6 +73,6 @@ export default class Home extends React.Component{
 
 
 function randomHome() {
-  var homes = [(<AppleHome/>), (<RandomHome/>), (<CatHome/>)];
+  var homes = [(<AppleHome/>), (<RandomHome/>), (<CatHome/>), (<ChatHome/>)];
   return homes[Math.floor(Math.random() * homes.length)];
 }

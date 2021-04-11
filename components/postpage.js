@@ -53,7 +53,7 @@ export default function PostPage(id) {
                     <div className={styles.['post-div-text']}>{ReactHtmlParser(data['text'].substring(1, data['text'].length - 1).trim().replaceAll('<p><br></p>', ""))}</div>
                   </div>
                     <div className={styles['comments-div']}>
-                      <p className={styles['comments-div-title']}>Comments:</p>
+                      <p className={styles['comments-div-title']}>Comments</p>
                       <FirebaseDatabaseMutation type="push" path={"posts/" + id + "/comments/"}>
                         {({ runMutation }) => {
                           var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];

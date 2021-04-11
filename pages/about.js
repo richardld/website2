@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Header from '../components/header'
 import AboutContent from '../components/aboutcontent'
+import ChatHome from '../components/chat'
+
 
 import styles from '../styles/Home.module.css'
 
