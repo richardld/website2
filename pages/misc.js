@@ -11,7 +11,9 @@ export default function Home() {
         <title>Misc</title>
       </Head>
       <Header />
-      <RocketMisc />
+      <div className={styles['center']}>
+        <RocketMisc />
+      </div>
     </div>
   )
 }

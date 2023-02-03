@@ -652,11 +652,11 @@ export default class ChatHome extends React.Component {
     this.messagesEnd.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
   }
   
-  message(data) {
+  message(data, index) {
     if (data[0] == 'user') {
-      return <p className={styles['right']}>{data[1]}</p>
+      return <p key={index} className={styles['right']}>{data[1]}</p>
     }
-    return <p className={styles['left']}>{data[1]}</p>
+    return <p key={index} className={styles['left']}>{data[1]}</p>
   }
   
   messagesEnd = null;
@@ -685,8 +685,9 @@ export default class ChatHome extends React.Component {
     var rep;
     for (rep in this.state.replies) {
       let d = this.state.replies[rep];
-      messages.push(this.message(d));
+      messages.push(this.message(d, rep));
     }
+    
     return (
         <div className={styles['container']}>
         <p className={styles['title']}>Richard Bot</p>

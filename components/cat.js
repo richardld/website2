@@ -12,7 +12,7 @@ export default class CatHome extends React.Component {
   render() {
     return (
       <div className={styles.frame}>
-        <iframe className={styles.iframe} frameborder="0"
+        <iframe className={styles.iframe}
           src="https://observablehq.com/embed/0ccac38cb5e5f6bb?cell=image"></iframe>
       </div>
     );

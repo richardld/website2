@@ -9,14 +9,14 @@ export default class AboutContent extends React.Component {
       index: 0
     };
   }
-  
+
   loading_done() {
     console.log("Bot has finished loading!");
 
     // Now the replies must be sorted!
     bot.sortReplies();
     console.log("Bot has finished sorting!");
-    
+
     // And now we're free to get a reply from the brain!
     // RiveScript remembers user data by their username and can tell
     // multiple users apart.
@@ -27,15 +27,15 @@ export default class AboutContent extends React.Component {
       console.log("The bot says: " + reply);
     });
   }
-  
+
   loading_error() {
-    
+
   }
-  
+
   componentDidMount() {
 
   }
-  
+
   render() {
     return (
       <div className={styles.top}>
@@ -45,17 +45,17 @@ export default class AboutContent extends React.Component {
             <p>University of California, Berkeley</p>
             <ul>
               <li>Enrolled in the College of Letters and Science</li>
-              <li>Declared Computer Science major</li>
-              <li>Expected graduation in December 2022</li>
+              <li>Computer Science and Data Science major</li>
+              <li>Expected graduation in May 2023</li>
             </ul>
-            
+
             <p>Westwood High School</p>
             <ul>
               <li>Located in Austin, TX</li>
               <li>Ranked in <a href="https://www.newsweek.com/high-schools/americas-top-high-schools-2016">top 50</a> high schools in US (<a href="https://www.newsweek.com">Newsweek</a>)</li>
               <li>Received AP recognition and IB diploma</li>
             </ul>
-            
+
             <p>Coursework</p>
             <div className={styles.courses}>
               <ul>
@@ -71,22 +71,20 @@ export default class AboutContent extends React.Component {
                 <li><a href="https://inst.eecs.berkeley.edu/~cs61b/fa19/">EE16B</a>: Designing Information Devices and Systems II</li>
                 <li><a href="http://data8.org/">STAT C8</a>: Foundations of Data Science</li>
                 <li><a href="https://history.berkeley.edu/">History 162B</a>: War and Peace: International Relations since 1914</li>
-                <li><a href="http://guide.berkeley.edu/courses/nusctx/">CS188</a>: Introduction to Artificial Intelligence</li>
-                <li><a href="http://guide.berkeley.edu/courses/nusctx/">CS189</a>: Introduction to Machine Learning</li>
+                <li><a href="https://inst.eecs.berkeley.edu/~cs188">CS188</a>: Introduction to Artificial Intelligence</li>
+                <li><a href="https://people.eecs.berkeley.edu/~jrs/189/">CS189</a>: Introduction to Machine Learning</li>
               </ul>
               <ul>
                 <li><a href="https://ugba198.org/">UGBA 198</a>: Machine Learning for Business Decisions</li>
-                <li><a href="https://fencing.berkeley.edu/">JOURN 98</a>: Direct Group Study in Journalism</li>
-                <li><a href="https://yearbook.berkeley.edu/">ARCH 98</a>: Introduction to Fencing</li>
-                <li><a href="http://guide.berkeley.edu/courses/nusctx/">EE127</a>: Optimization Models in Engineering</li>
+                <li><a href="https://yearbook.berkeley.edu/">JOURN 98</a>: Direct Group Study in Journalism</li>
+                <li><a href="https://fencing.berkeley.edu/">ARCH 98</a>: Introduction to Fencing</li>
+                <li><a href="https://www2.eecs.berkeley.edu/Courses/EE127/">EE127</a>: Optimization Models in Engineering</li>
               </ul>
             </div>
             <p>Organizations</p>
             <div className={styles.courses}>
               <ul>
-                <li><a href="https://www2.eecs.berkeley.edu/Courses/CS61A/">Hybrid Ecologies Lab</a>, member</li>
                 <li><a href="https://www2.eecs.berkeley.edu/Courses/EE16A/">Blue & Gold Yearbook</a>, writer</li>
-                <li><a href="https://astro.berkeley.edu/course-information/4002145-introduction-to-general-astronomy">Web Dev at Berkeley</a>, developer</li>
                 <li><a href="http://guide.berkeley.edu/courses/nusctx/">Cal Table Tennis</a>, committee lead</li>
                 <li><a href="http://guide.berkeley.edu/courses/nusctx/">IBelieve</a>, tutor</li>
                 <li><a href="http://guide.berkeley.edu/courses/nusctx/">Rocket League at Berkeley</a>, president/captain</li>

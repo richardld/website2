@@ -1,10 +1,6 @@
-.container {
-  
-}
-
 .text {
   max-width: calc(100vw - 4em);
-  max-height: 85vh;
+  max-height: 80vh;
   line-height: 1.01px;
   font-size: 18px;
   overflow: hidden;

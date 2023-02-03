@@ -10,7 +10,7 @@
   padding: 25px;
   width: 97%;
   margin: auto;
-  grid-template-columns: repeat(6, calc((97vw - 185px) / 6));
+  grid-template-columns: repeat(auto-fit, calc((97vw - 185px) / 6));
   grid-column-gap: 22px;
   grid-row-gap: 22px;
   margin-top: -3vh;

@@ -1,15 +1,25 @@
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 import React from 'react';
-import $ from 'jquery'
+import styles from '../styles/Home.module.css'
+
 
 import Header from '../components/header'
 import AppleHome from '../components/apple'
 import RandomHome from '../components/randomtext'
 import CatHome from '../components/cat'
 import ChatHome from '../components/chat'
+import SearchHome from '../components/search'
+import FoodHome from '../components/food'
+import PastHome from '../components/past'
+
+import { IoChevronForwardOutline } from "react-icons/io5";
+import { IoChevronBackOutline } from "react-icons/io5";
+
+
+import { useState } from 'react';
 
 import firebase from "firebase"
-import styles from '../styles/Home.module.css'
 
 var config = {
   apiKey: "AIzaSyAi0XvTp6AS1ZtR-zYH0lwY8kc6xosGeb4",
@@ -37,42 +47,34 @@ function choose(choices) {
   return choices[index];
 }
 
-export default class Home extends React.Component{
-  constructor(props) {
-    super(props);
-  }
-  
-  componentDidMount() {
-    $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
-      var str = data.split(/\r?\n/);
-      var dict = new Object();
-      str.forEach(function(entry) {
-        var e = entry.split('=')
-        console.log(e);
-        dict[e[0]] = e[1];
-      });
-      writeVisitorData(dict['ip'], dict['uag']);
-    });
-    //firebase.database().ref('/hello').once('value').then(function(snapshot) {
-    //  console.log(snapshot.val());
-    //});
-  }
-  
-  render() {
-    return (
-      <div>
-        <Head>
-          <title>Richard's Website</title>
-        </Head>
-        <Header />
-        {randomHome()}
+const homes = [<RandomHome/>, <CatHome/>, <ChatHome/>, <SearchHome/>, <FoodHome/>, <PastHome/>, <AppleHome/>];
+
+function Home(props) {
+  const [randIndex, setRandIndex] = useState(Math.floor(Math.random() * homes.length))
+  console.log(randIndex)
+
+  return (
+    <div>
+      <Head>
+        <title>Richard's Website</title>
+      </Head>
+      <Header />
+      {homes[randIndex]}
+      <div className={styles['center']}>
+        <div className={styles['buttonBox']}>
+          <button className={styles['navButton']} onClick={() => {setRandIndex(Math.max(0, randIndex - 1))}}>
+            <IoChevronBackOutline/>
+          </button>
+          <p>Home Screen {randIndex + 1} of {homes.length}</p>
+          <button className={styles['navButton']} onClick={() => {setRandIndex(Math.min(homes.length - 1, randIndex + 1))}}>
+            <IoChevronForwardOutline/>
+          </button>
+        </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
-
-function randomHome() {
-  var homes = [(<AppleHome/>), (<RandomHome/>), (<CatHome/>), (<ChatHome/>)];
-  return homes[Math.floor(Math.random() * homes.length)];
-}
+export default dynamic(() => Promise.resolve(Home), {
+  ssr: false
+})

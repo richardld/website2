@@ -6,7 +6,6 @@
 
 .rocket {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .cut {
@@ -22,9 +21,7 @@
   scrollbar-color: white;
 }
 
-
 .mmr body {
   scrollbar-width: none;
   overflow: hidden;
 }
-
