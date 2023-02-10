@@ -12,6 +12,9 @@ import ChatHome from '../components/chat'
 import SearchHome from '../components/search'
 import FoodHome from '../components/food'
 import PastHome from '../components/past'
+import GalleryHome from '../components/gallery'
+import TreeHome from '../components/tree'
+import NewspaperHome from '../components/newspaper'
 
 import { IoChevronForwardOutline } from "react-icons/io5";
 import { IoChevronBackOutline } from "react-icons/io5";
@@ -47,11 +50,14 @@ function choose(choices) {
   return choices[index];
 }
 
-const homes = [<RandomHome/>, <CatHome/>, <ChatHome/>, <SearchHome/>, <FoodHome/>, <PastHome/>, <AppleHome/>];
 
 function Home(props) {
+  const desktopHomes = [<RandomHome/>, <CatHome/>, <ChatHome/>, <SearchHome/>, <FoodHome/>, <PastHome/>, <AppleHome/>, <GalleryHome/>, <NewspaperHome/>, <TreeHome/>];
+  const mobileHomes = [<RandomHome/>, <CatHome/>, <ChatHome/>, <SearchHome/>, <FoodHome/>, <PastHome/>, <GalleryHome/>];
+  const homes = window.innerWidth > 1000 ? desktopHomes : mobileHomes
+  // const homes = [<NewspaperHome/>]
+
   const [randIndex, setRandIndex] = useState(Math.floor(Math.random() * homes.length))
-  console.log(randIndex)
 
   return (
     <div>

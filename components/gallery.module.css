@@ -7,8 +7,8 @@
 }
 
 .frame {
-    border: 5px #D0D0D0 solid;
-    width: min(95vw, 1000px);
-    height: min(75vh, 600px);
+    border: 2px #D0D0D0 solid;
+    width: min(95vw, 1200px);
+    height: min(75vh, 650px);
     margin-top: 20px;
 }

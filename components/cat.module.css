@@ -8,6 +8,6 @@
 .iframe {
   overflow: hidden;
   border-width: 0px;
-  height: 85vh;
-  width: calc(85vh / 1.1);
+  height: min(85vw, 85vh);
+  width: min(85vw, 85vh);
 }
